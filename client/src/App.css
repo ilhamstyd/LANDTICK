@@ -1,0 +1,12 @@
+.Text{
+  color: rgb(232, 135, 172);
+}
+.btn{
+  background-color: rgb(232, 135, 172) !important;
+  border: none !important;
+}
+.buttonRegist{
+  background-color: white !important;
+  color: rgb(232, 135, 172) !important;
+  border: 1px solid rgb(232, 135, 172) !important;
+}
