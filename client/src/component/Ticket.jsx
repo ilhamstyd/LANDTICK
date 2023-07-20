@@ -6,6 +6,7 @@ import ModalSuccessAddTicket from "./ModalSucsesTicket";
 import { API } from "../config/api";
 import { useQuery } from "react-query";
 
+
 const Ticket = ({startStation, endStation, search}) => {
 
   const [state] = useContext(UserContext);
