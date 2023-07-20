@@ -1,7 +1,8 @@
 import { Card, Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { API } from "../config/api";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
+import { useEffect } from "react";
 
 export const Payment = () => {
 
@@ -16,6 +17,52 @@ export const Payment = () => {
   })
 
   const Navigate = useNavigate()
+
+  const handleBuy = useMutation (async () => {
+    try {
+
+      const response = await API.get(`/getpayment/${param.id}`);
+      console.log("ini response", response);
+      
+      const token = response.data.data.token;
+      console.log("ini token", token)
+
+      window.snap.pay(token, {
+        onSuccess: function (result) {
+          console.log(result);
+          Navigate("/my-ticket");
+        },
+        onPending: function (result) {
+          console.log(result);
+          Navigate("/my-ticket");
+        },
+        onError: function (result) {
+          console.log(result);
+          Navigate("/my-ticket");
+        },
+        onClose: function () {
+          alert("TESTTT")
+        },
+      });
+    } catch (error) {
+      console.log(error)
+    }
+  })
+
+  useEffect (() => {
+    const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
+    const myMidtransClientKey = process.env.REACT_APP_MIDTRANS_CLIENT_KEY;
+
+    let scriptTag = document.createElement("script");
+    scriptTag.src = midtransScriptUrl;
+
+    scriptTag.setAttribute("data-client-key", myMidtransClientKey);
+
+    document.body.appendChild(scriptTag);
+    return () => {
+      document.body.removeChild(scriptTag);
+    };
+  }, []);
 
     return (
             <>
@@ -78,8 +125,7 @@ export const Payment = () => {
                               variant="outline-light"
                               className="fw-bold mt-3 mb-5"
                               style={{ width: "400px", height: "auto", background: "linear-gradient(90deg, #EC7AB7 -0.6%, #EC7A7A 100%)" }}
-                              onClick={() => Navigate("/my-ticket/{transaction?.ID}")}
-                            >Bayar Sekarang
+                              onClick={() => handleBuy.mutate(param.id)}>Bayar Sekarang
                             </Button>
                           </div>
                         </div>

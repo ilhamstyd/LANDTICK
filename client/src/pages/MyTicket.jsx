@@ -34,7 +34,7 @@ export default function MyTicket() {
                       <h1 className="ms-5 mt-5 fw-bold">{transactions.ticket.train_name}</h1>
                       <h5 className="ms-5 mt-3">{transactions.ticket.train_type}</h5>
                       <div className="font-size-14px text-center rounded ms-5 mt-3" style={{ width: "69px", height: "24px", color: "#78A85A", backgroundColor: "rgba(120,168,90,0.125)" }}>
-                      SUCCESS
+                      {transactions.status}
                       </div>
                     </div>
                     <div className="mt-5 ms-5">

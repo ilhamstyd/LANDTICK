@@ -133,7 +133,7 @@ function Navigationbar(props) {
                       />
                     }>
                     <NavDropdown.Divider style={{ background: "#EC7AB7" }} />
-                   <NavDropdown.Item> <Link to="/my-ticket/${id}" className='text-decoration-none text-black'>
+                   <NavDropdown.Item> <Link to="/my-ticket" className='text-decoration-none text-black'>
                       <img
                         src={Ticket}
                         alt=""

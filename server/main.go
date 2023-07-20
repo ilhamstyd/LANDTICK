@@ -6,16 +6,17 @@ import (
 	"landtick/pkg/mysql"
 	"landtick/routes"
 
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
 
-	// errEnv := godotenv.Load()
-	// if errEnv != nil {
-	// 	panic("Failed to load env file")
-	// }
+	errEnv := godotenv.Load()
+	if errEnv != nil {
+		panic("failed to load env file")
+	}
 
 	e := echo.New()
 
@@ -34,6 +35,6 @@ func main() {
 
 	e.Static("/uploads", "./uploads")
 
-	e.Logger.Fatal(e.Start("localhost:5000"))
+	e.Logger.Fatal(e.Start(":5000"))
 	fmt.Println("server running localhost:5000")
 }

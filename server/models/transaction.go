@@ -7,5 +7,5 @@ type Transaction struct {
 	TicketID int    `json:"ticket_id"`
 	Ticket   Ticket `json:"ticket"`
 	Image    string `json:"image" form:"image" gorm:"type: varchar(255)"`
-	Status   string `json:"status" form:"status" gorm:"default:'pending'"`
+	Status   string `json:"status" form:"status" gorm:"type: varchar(255)"`
 }

@@ -14,11 +14,17 @@ require (
 )
 
 require (
+	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
+	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df // indirect
+)
+
+require (
 	github.com/creasty/defaults v1.5.1 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/schema v1.2.0 // indirect
+	github.com/midtrans/midtrans-go v1.3.6
 	golang.org/x/time v0.3.0 // indirect
 )
 

@@ -25,7 +25,7 @@ export const MyTicketPending = () => {
   
   let {data: transaction } = useQuery("transactioneCache", async () => {
     const response = await API.get(`/transaction-client`);
-    console.log("coba dlu", response.data.data)
+    console.log("myticketpending", response.data.data)
     return response.data.data;
   })
 
