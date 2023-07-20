@@ -50,9 +50,18 @@ export const MyTicketPending = () => {
                   <div>
                     <h1 className="ms-5 mt-5 fw-bold">{transactions?.ticket.train_name}</h1>
                     <h5 className="ms-5 mt-3">{transactions?.ticket.train_type}</h5>
-                    <div className="font-size-14px text-center rounded ms-5 mt-3" style={{ width: "69px", height: "24px", color: "#FF9900", backgroundColor: "rgba(255,153,0,0.125)" }}>
-                    {transactions?.status}
-                    </div>
+
+                    {transactions?.status === "pending" ? 
+                    (<div className="font-size-14px text-center rounded ms-5 mt-3" style={{ width: "69px", height: "24px", color: "#FF9900", backgroundColor: "rgba(255,153,0,0.125)" }}>
+                      <p>{transactions?.status}</p>
+                      </div>)
+                      :
+                    (<div className="font-size-14px text-center rounded ms-5 mt-3" style={{ width: "69px", height: "24px", color: "#78A85A", backgroundColor: "rgba(120,168,90,0.125)" }}>
+                    <p>{transactions?.status}</p>
+                    </div>)}
+                    
+                    
+                    
                   </div>
                   <div className="mt-5 ms-5">
                     <div className="rounded-circle" style={{ width: "16px", height: "16px", border: "2px solid #EC7AB7" }}></div>
@@ -96,7 +105,11 @@ export const MyTicketPending = () => {
                         <p className="col col-sm-2">{transactions?.user.email}</p>
                         <p className="col col-sm-2"></p>
                         <div className="col col-sm-2 mb-2">
-                        <Button onClick={() => handleBuy(transactions?.ID)}>Bayar Sekarang</Button>
+                        {transactions?.status === "pending" ? 
+                    (<Button onClick={() => handleBuy(transactions?.ID)}>Bayar Sekarang</Button>)
+                      :
+                    (<p></p>)}
+                        
                         </div>
                     </div>
                     </div>
