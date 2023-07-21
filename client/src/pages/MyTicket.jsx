@@ -73,14 +73,14 @@ export default function MyTicket() {
                           <p className="col col-sm-2">No. Tanda Pengenal</p>
                           <p className="col col-sm-4">Nama Pemesan</p>
                           <p className="col col-sm-2">No. Handphone</p>
-                          <p className="col col-sm-2">Email</p>
+                          <p className="col col-sm-4">Email</p>
                     <hr></hr>
                     </div>
                       <div className="row ms-4 text-secondary">
                           <p className="col col-sm-2">{transactions.user.id}</p>
                           <p className="col col-sm-4">{transactions.user.fullname}</p>
                           <p className="col col-sm-2">{transactions.user.phone}</p>
-                          <p className="col col-sm-2">{transactions.user.email}</p>
+                          <p className="col col-sm-4">{transactions.user.email}</p>
                       </div>
                 </div>
               </Card>
