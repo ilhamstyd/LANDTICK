@@ -67,9 +67,12 @@ export const AdminListTransactions = () => {
                     <td>
                     {transaction?.ticket.start_station.name} - {transaction?.ticket.end_station.name}
                     </td>
-                    <td style={{ color: "#FF9900" }}>{transaction?.status}</td>
-                    {/* <td style={{ color: "#78A85A" }}></td>
-                    <td style={{ color: "#E83939" }}></td> */}
+                    {transaction?.status === "pending" ? 
+                    (<td style={{ color: "#FF9900" }}>{transaction?.status}</td>)
+                     :
+                    (<td style={{ color: "yellowgreen" }}>{transaction?.status}</td>)}
+                    
+
                     <td className="d-flex justify-content-center">
                           <img onClick={() => {popSuccessDetail(); setID(transaction?.ID)}} src="/images/IconSearch.png" alt="" style={{ cursor: "pointer" }} />
                           <img onClick={() => {popSuccessDelete(); setID(transaction?.ID)}} src="/images/IconTrash.png" alt="" className="ms-5" style={{ cursor: "pointer" }} />
