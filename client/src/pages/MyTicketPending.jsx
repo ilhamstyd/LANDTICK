@@ -54,12 +54,12 @@ export const MyTicketPending = () => {
                   sabtu, 21 Februari 2022
                 </p>
                 {transactions?.status === "success" ? (
-                <>
-                <img className=" mt-3" src="/images/Barcode.png" alt="" />
-                <p className="mt-3">INV0101</p>
-                </>
+                  <>
+                    <img className=" mt-3" src="/images/Barcode.png" alt="" />
+                    <p className="mt-3">INV0101</p>
+                  </>
                 ) : (
-                <p></p>
+                  <p></p>
                 )}
               </div>
 
@@ -172,9 +172,15 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">{transactions?.user.username}</p>
                   <p className="col col-sm-2">{transactions?.user.phone}</p>
                   <p className="col col-sm-2">{transactions?.user.email}</p>
-                  <div className="col col-sm-4 mb-3 bg-danger">
+                  <div className="col col-sm-4 mb-4 bg-danger">
                     {transactions?.status === "pending" ? (
-                      <Button onClick={() => {handleBuy(transactions?.ID); navigate(`/payment/${transactions?.ID}`)}}>
+                      <Button
+                        className="text-center"
+                        onClick={() => {
+                          handleBuy(transactions?.ID);
+                          navigate(`/payment/${transactions?.ID}`);
+                        }}
+                      >
                         Bayar Sekarang
                       </Button>
                     ) : (
