@@ -71,7 +71,7 @@ const checkUser = async () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/myticketpending/:id" element={<MyTicketPending/>} />
-        <Route path="/my-ticket" element={<MyTicket />} />
+        <Route path="/my-ticket" element={<MyTicketPending />} />
         <Route path="/payment/:id" element={<Payment />} />
         <Route path="/ListTransactions" element={<AdminListTransactions />} />
         <Route path="/AddTicket" element={<AddTicket />} />
