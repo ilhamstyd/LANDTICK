@@ -164,7 +164,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">Nama Pemesan</p>
                   <p className="col col-sm-2">No. Handphone</p>
                   <p className="col col-sm-2">Email</p>
-                  <p className="col col-sm-4">Email</p>
+                  <p className="col col-sm-4"></p>
                   <hr></hr>
                 </div>
                 <div className="row ms-4 mb-2 text-secondary">
@@ -172,7 +172,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">{transactions?.user.username}</p>
                   <p className="col col-sm-2">{transactions?.user.phone}</p>
                   <p className="col col-sm-2">{transactions?.user.email}</p>
-                  <div className="col col-sm-4 mb-3 ms-5 bg-danger">
+                  <div className="col col-sm-4 mb-3 bg-danger">
                     {transactions?.status === "pending" ? (
                       <Button onClick={() => {handleBuy(transactions?.ID); navigate(`/payment/${transactions?.ID}`)}}>
                         Bayar Sekarang
