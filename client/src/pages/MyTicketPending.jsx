@@ -172,7 +172,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">{transactions?.user.username}</p>
                   <p className="col col-sm-2">{transactions?.user.phone}</p>
                   <p className="col col-sm-2">{transactions?.user.email}</p>
-                  <div className="col col-sm-4 mb-2 text-end">
+                  <div className="col col-sm-4 mb-4 text-end">
                     {transactions?.status === "pending" ? (
                       <Button
                       onClick={() => {
