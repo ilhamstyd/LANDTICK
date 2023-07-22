@@ -12,7 +12,7 @@ export const MyTicketPending = () => {
   const handleBuy = async (id) => {
     try {
       const response = await API.get(`/transaction/${id}`);
-      navigate(`/payment/${param.id}`);
+      // navigate(`/payment/${param.id}`);
       console.log("test :", response.data.data);
       return response.data.data;
     } catch (error) {
@@ -173,7 +173,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">{transactions?.user.email}</p>
                   <div className="col col-sm-2 mb-3 ms-5">
                     {transactions?.status === "pending" ? (
-                      <Button onClick={() => handleBuy(transactions?.ID)}>
+                      <Button onClick={() => {handleBuy(transactions?.ID); navigate(`/payment/${transactions.ID}`)}}>
                         Bayar Sekarang
                       </Button>
                     ) : (
