@@ -173,7 +173,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">{transactions?.user.email}</p>
                   <div className="col col-sm-2 mb-3 ms-5">
                     {transactions?.status === "pending" ? (
-                      <Button onClick={() => {handleBuy(transactions?.ID); navigate(`/payment/${transactions.ID}`)}}>
+                      <Button onClick={() => {handleBuy(transactions?.ID); navigate(`/payment/${transactions?.ID}`)}}>
                         Bayar Sekarang
                       </Button>
                     ) : (
