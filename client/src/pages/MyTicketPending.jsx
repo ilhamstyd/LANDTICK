@@ -159,7 +159,7 @@ export const MyTicketPending = () => {
               </div>
 
               <div className=" mt-3 ">
-                <div class="row ms-3 border-1 border-dark">
+                <div class="row border-1 border-dark">
                   <p className="col col-sm-2">No. Tanda Pengenal</p>
                   <p className="col col-sm-2">Nama Pemesan</p>
                   <p className="col col-sm-2">No. Handphone</p>
@@ -167,7 +167,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-4"></p>
                   <hr></hr>
                 </div>
-                <div className="row ms-4 mb-2 text-secondary">
+                <div className="row mb-2 text-secondary">
                   <p className="col col-sm-2">{transactions?.user.id}</p>
                   <p className="col col-sm-2">{transactions?.user.username}</p>
                   <p className="col col-sm-2">{transactions?.user.phone}</p>
