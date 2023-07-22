@@ -164,6 +164,7 @@ export const MyTicketPending = () => {
                   <p className="col col-sm-2">Nama Pemesan</p>
                   <p className="col col-sm-2">No. Handphone</p>
                   <p className="col col-sm-2">Email</p>
+                  <p className="col col-sm-4">Email</p>
                   <hr></hr>
                 </div>
                 <div className="row ms-4 mb-2 text-secondary">
