@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { API } from "../config/api";
 import { useQuery, useMutation } from "react-query";
 import { useEffect } from "react";
+import { FormatIdr } from "../component/FormatIdr";
 
 export const Payment = () => {
 
@@ -113,11 +114,11 @@ export const Payment = () => {
                                 <h5 className="ms-5">
                                  (Adult) x 1
                                 </h5>
-                                <h5 className="me-5">{transaction?.ticket?.price}</h5>
+                                <h5 className="me-5">{FormatIdr(transaction?.ticket?.price)}</h5>
                               </div>
                               <div className="d-flex justify-content-between" style={{ background: "#E6E6E6" }}>
                                 <h5 className="ms-5 mt-2">Total</h5>
-                                <h5 className="fw-bold me-5 mt-2">{transaction?.ticket?.price}</h5>
+                                <h5 className="fw-bold me-5 mt-2">{FormatIdr(transaction?.ticket?.price)}</h5>
                               </div>
                             </Card>
                             <Button

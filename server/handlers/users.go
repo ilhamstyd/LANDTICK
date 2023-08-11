@@ -26,14 +26,14 @@ func HandlerUser(UserRepository repositories.UserRepository) *handler {
 func (h *handler) FindUsers(c echo.Context) error {
 	users, err := h.UserRepository.FindUsers()
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError,
-			dto.ErrorResult{Code: http.StatusAccepted,
-				Status:  http.StatusInternalServerError,
+		return c.JSON(http.StatusBadRequest,
+			dto.ErrorResult{Code: http.StatusInternalServerError,
+				Status:  http.StatusBadRequest,
 				Message: err.Error()})
 	}
 
 	return c.JSON(http.StatusOK, dto.SuccessResult{Code: http.StatusAccepted,
-		Status: "SUCCESS", Message: "Profile data created successfully",
+		Status: "SUCCESS", Message: "success",
 		Data: dataUser{User: users}})
 }
 

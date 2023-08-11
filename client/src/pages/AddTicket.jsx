@@ -38,7 +38,6 @@ export const AddTicket = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
   const handleSubmit = useMutation(async (e) => {
     try {
       e.preventDefault();

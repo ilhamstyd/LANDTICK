@@ -2,9 +2,7 @@ import Jumbotron from "../component/Jumbotron";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import Ticket from "../component/Ticket";
 import { useState, useEffect } from "react";
-import { useMutation, useQuery } from "react-query";
 import { API } from "../config/api";
-import Swal from "sweetalert2"
 
 export default function Home() {
 
@@ -13,8 +11,6 @@ export default function Home() {
     start_station_id:'',
     end_station_id:'',
   });
-
-  const [filteredTickets, setFilteredTickets] = useState([]);
 
   const getStations = async () => {
     try {

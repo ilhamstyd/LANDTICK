@@ -5,6 +5,7 @@ import { UserContext } from "../UserContext/UserContext";
 import ModalSuccessAddTicket from "./ModalSucsesTicket";
 import { API } from "../config/api";
 import { useQuery } from "react-query";
+import { FormatIdr } from "./FormatIdr";
 
 
 const Ticket = ({startStation, endStation, search}) => {
@@ -64,7 +65,7 @@ const Ticket = ({startStation, endStation, search}) => {
                     <h5 className="fw-bold">5j 05m</h5>
                   </Col>
                   <Col md={2}>
-                    <h5 className="fw-bold text-danger ">{ticket.price}</h5>
+                    <h5 className="fw-bold text-danger ">{FormatIdr(ticket.price)}</h5>
                   </Col>
                 </Row>
         </Container>

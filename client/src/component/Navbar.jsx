@@ -91,14 +91,8 @@ function Navigationbar(props) {
                           cursor: "pointer",
                           objectFit: "cover",
                           width: "50px",
-                          height: "50px",
-                        }}
-                      />
-                    }
-                  >
-
+                          height: "50px",}}/>}>
                     <NavDropdown.Divider style={{ background: "#EC7AB7" }} />
-                    
                       <NavDropdown.Item className="d-flex align-items-center">
                       <img src={IconAddTicket} alt="" />
                       <Link to="/AddTicket" className='text-decoration-none text-dark'><span className="ms-3 fw-bold">Add Ticket</span></Link>
